@@ -1,6 +1,6 @@
 # Guard::Bundler::Audit
 
-(https://github.com/guard/guard guard) + (https://github.com/rubysec/bundler-audit "bundler-audit") = (http://www.rubysec.com/ "security")
+[guard](https://github.com/guard/guard) + [bundler-audit](https://github.com/rubysec/bundler-audit) =  [security](http://www.rubysec.com/)
 
 ## Installation
 
