@@ -18,7 +18,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    guard 'bundler_audit', run_on_start: true do
+      watch('Gemfile.lock')
+    end
 
 ## Contributing
 
