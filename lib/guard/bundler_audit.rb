@@ -9,7 +9,7 @@ module Guard
     # Guard callback
     #
     def start
-      Bundler::Audit::Database.update!
+      ::Bundler::Audit::Database.update!
     end
 
     #
@@ -32,11 +32,11 @@ module Guard
     # Scans for vulnerabilities and reports them.
     #
     def audit
-      res = Bundler::Audit::Scanner.new.scan.to_a.map do |vuln|
+      res = ::Bundler::Audit::Scanner.new.scan.to_a.map do |vuln|
         case vuln
-        when Bundler::Audit::Scanner::InsecureSource
+        when ::Bundler::Audit::Scanner::InsecureSource
           insecure_source_message vuln
-        when Bundler::Audit::Scanner::UnpatchedGem
+        when ::Bundler::Audit::Scanner::UnpatchedGem
           insecure_gem_message vuln
         else
           insecure_message vuln
