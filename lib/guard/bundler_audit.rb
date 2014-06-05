@@ -1,15 +1,16 @@
 require 'guard'
 require 'guard/guard'
 require 'bundler/audit'
+require 'guard/plugin'
 require 'bundler/audit/scanner'
 
 module Guard
-  class BundlerAudit < Guard
+  class BundlerAudit < Plugin #Guard
     #
     # Guard callback
     #
     def start
-      Bundler::Audit::Database.update!
+      ::Bundler::Audit::Database.update!
     end
 
     #
@@ -32,11 +33,11 @@ module Guard
     # Scans for vulnerabilities and reports them.
     #
     def audit
-      res = Bundler::Audit::Scanner.new.scan.to_a.map do |vuln|
+      res = ::Bundler::Audit::Scanner.new.scan.to_a.map do |vuln|
         case vuln
-        when Bundler::Audit::Scanner::InsecureSource
+        when ::Bundler::Audit::Scanner::InsecureSource
           insecure_source_message vuln
-        when Bundler::Audit::Scanner::UnpatchedGem
+        when ::Bundler::Audit::Scanner::UnpatchedGem
           insecure_gem_message vuln
         else
           insecure_message vuln
@@ -45,7 +46,7 @@ module Guard
       if res.any?
         message = "Vulnerabilities found:\n" + res.join("\n")
         notify message
-        fail message
+        UI.info(UI.send(:color, message, :red))
       end
     end
 
