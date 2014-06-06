@@ -8,11 +8,11 @@ Add this line to your application's Gemfile:
 
     gem 'guard-bundler-audit'
 
-And then execute:
+Then execute:
 
     $ bundle
 
-Or install it yourself as:
+Alternatively, install it without bundler:
 
     $ gem install guard-bundler-audit
 
