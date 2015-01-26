@@ -1,5 +1,4 @@
 require 'guard'
-require 'guard/guard'
 require 'bundler/audit'
 require 'guard/plugin'
 require 'bundler/audit/scanner'
