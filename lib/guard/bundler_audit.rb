@@ -44,9 +44,13 @@ module Guard
       end
       if res.any?
         message = "Vulnerabilities found:\n" + res.join("\n")
+        color = :red
         notify message
-        UI.info(UI.send(:color, message, :red))
+      else
+        message = "No vulnerabilities found."
+        color = :green
       end
+      UI.info(UI.send(:color, message, color))
     end
 
     def notify message
