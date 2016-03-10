@@ -10,6 +10,7 @@ module Guard
     #
     def start
       ::Bundler::Audit::Database.update!
+      audit
     end
 
     #
