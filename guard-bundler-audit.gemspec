@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "guard-bundler-audit"
-  spec.version       = '0.1.2'
+  spec.version       = '0.1.4'
   spec.authors       = ["Christian Hellsten"]
   spec.email         = ["christian@aktagon.com"]
   spec.summary       = %q{guard + bundler-audit = security}
