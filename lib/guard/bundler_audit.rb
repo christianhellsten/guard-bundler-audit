@@ -35,9 +35,9 @@ module Guard
     def audit
       res = ::Bundler::Audit::Scanner.new.scan.to_a.map do |vuln|
         case vuln
-        when ::Bundler::Audit::Scanner::InsecureSource
+        when ::Bundler::Audit::Results::InsecureSource
           insecure_source_message vuln
-        when ::Bundler::Audit::Scanner::UnpatchedGem
+        when ::Bundler::Audit::Results::UnpatchedGem
           insecure_gem_message vuln
         else
           insecure_message vuln
