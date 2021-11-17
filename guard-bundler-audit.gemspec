@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency 'guard',         '~> 2.0'
-  spec.add_dependency 'bundler-audit', '>= 0.3.1'
+  spec.add_dependency 'bundler-audit', '>= 0.6.0'
 
   spec.add_development_dependency "bundler", "~> 1.5"
   spec.add_development_dependency "rake"
